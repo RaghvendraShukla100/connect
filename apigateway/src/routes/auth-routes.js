@@ -1,19 +1,21 @@
-import express from "express";
-import validate from "../middleware/validate-request.js";
-import { register, login } from "../validations/auth.schema.js";
+// src/routes/auth-routes.js
+import { Router } from "express";
+import { createProxyMiddleware } from "http-proxy-middleware";
+import dotenv from "dotenv";
+dotenv.config();
 
-const router = express.Router();
+const router = Router();
 
-router.post("/register", validate(register), (req, res) => {
-  res
-    .status(501)
-    .json({ message: "Stub: this route should be proxied to auth-service" });
-});
-
-router.post("/login", validate(login), (req, res) => {
-  res
-    .status(501)
-    .json({ message: "Stub: this route should be proxied to auth-service" });
-});
+// Proxy all /api/auth/* requests to Identity service
+router.use(
+  "/",
+  createProxyMiddleware({
+    target: process.env.AUTH_SERVICE_URL, // http://localhost:4000
+    changeOrigin: true,
+    pathRewrite: {
+      "^/": "/", // keep the same path
+    },
+  })
+);
 
 export default router;

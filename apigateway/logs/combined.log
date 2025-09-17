@@ -1,0 +1,13 @@
+{"level":"info","message":"API Gateway running on port 8080","timestamp":"2025-09-09T18:12:02.618Z"}
+{"level":"info","message":"API Gateway running on port 8080","timestamp":"2025-09-09T18:13:29.266Z"}
+{"level":"info","message":"\n  \n  API Gateway running on port 8080\n  \n  ","timestamp":"2025-09-09T18:14:53.199Z"}
+{"level":"info","message":"API Gateway running on port 8080","timestamp":"2025-09-09T18:15:24.191Z"}
+{"level":"info","message":"API Gateway running on port 8080","timestamp":"2025-09-09T18:22:47.048Z"}
+{"level":"info","message":"GET /auth/test","timestamp":"2025-09-09T18:23:37.679Z"}
+{"level":"info","message":"GET /","timestamp":"2025-09-09T18:24:17.121Z"}
+{"level":"info","message":"GET /","timestamp":"2025-09-09T18:28:04.000Z"}
+{"level":"info","message":"GET /api/auth/test","timestamp":"2025-09-09T18:35:33.128Z"}
+{"level":"info","message":"API Gateway running on port 8080","timestamp":"2025-09-09T18:35:51.364Z"}
+{"level":"info","message":"GET /api/auth/test","timestamp":"2025-09-09T18:36:03.170Z"}
+{"level":"info","message":"GET /api/auth/test","timestamp":"2025-09-09T18:39:49.472Z"}
+{"level":"info","message":"API Gateway running on port 8080","timestamp":"2025-09-13T13:12:35.767Z"}

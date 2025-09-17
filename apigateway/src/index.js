@@ -1,54 +1,34 @@
+// index.js
 import express from "express";
-import morgan from "morgan";
-import helmet from "helmet";
-import { createProxyMiddleware } from "http-proxy-middleware";
-import rateLimit from "express-rate-limit";
+import configCors from "../config/cors.js";
+import applyPlugins from "../config/plugins.js";
+import rateLimit from "../config/rate-limit.js";
 
-import routes from "../config/routes.js";
-import plugins from "../config/plugins.js";
-import corsConfig from "../config/cors.js";
-import rateLimitConfig from "../config/rate-limit.js";
-import authConfig from "../config/auth.js";
+// Import routes
+import authRoutes from "./routes/auth-routes.js";
+import jobRoutes from "./routes/job-routes.js";
+import userRoutes from "./routes/user-routes.js";
 
-import errorHandler from "./middleware/error-handler.js";
-import security from "./middleware/security.js";
+// Import middlewares
+import errorHandler from "../logs/error-handler.js";
 
 const app = express();
+
+// Apply middlewares
 app.use(express.json());
-app.use(morgan("combined"));
-app.use(helmet());
+app.use(configCors);
+applyPlugins(app);
+app.use(rateLimit);
 
-// Security (CORS, Helmet, etc.)
-security(app, corsConfig);
-
-// Rate limiting
-if (plugins.rateLimit) {
-  app.use(rateLimit(rateLimitConfig));
-}
-
-// Proxy setup
-routes.forEach(({ path, target, stripPrefix }) => {
-  const proxy = createProxyMiddleware({
-    target,
-    changeOrigin: true,
-    pathRewrite: stripPrefix ? { [`^${path}`]: "" } : undefined,
-    onProxyReq: (proxyReq, req) => {
-      const authHeader = req.headers["authorization"];
-      if (authHeader) proxyReq.setHeader("authorization", authHeader);
-    },
-    proxyTimeout: 10000,
-  });
-
-  app.use(path, proxy);
-});
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/jobs", jobRoutes);
+app.use("/api/users", userRoutes);
 
 // Health check
-app.get("/healthz", (req, res) => res.json({ status: "ok", ts: Date.now() }));
+app.get("/health", (req, res) => res.json({ status: "UP" }));
 
-// Error handler
+// Error handler (last middleware)
 app.use(errorHandler);
-
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`API Gateway running on port ${PORT}`));
 
 export default app;
