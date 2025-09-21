@@ -1,0 +1,9 @@
+{
+  "mappings": {
+    "properties": {
+      "adId": { "type": "keyword" },
+      "content": { "type": "text" },
+      "targetAudience": { "type": "keyword" }
+    }
+  }
+}

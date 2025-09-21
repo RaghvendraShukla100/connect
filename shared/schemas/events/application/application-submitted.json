@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "applicationId": { "type": "string" },
+    "userId": { "type": "string" },
+    "jobId": { "type": "string" },
+    "submittedAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["applicationId", "userId", "jobId", "submittedAt"]
+}

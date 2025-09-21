@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "notificationId": { "type": "string" },
+    "userId": { "type": "string" },
+    "message": { "type": "string" },
+    "sentAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["notificationId", "userId", "message", "sentAt"]
+}

@@ -1,0 +1,10 @@
+{
+  "userId": "12345",
+  "name": "Raghvendra Shukla",
+  "email": "raghvendra@example.com",
+  "password": "$2b$10$encryptedpassword",
+  "role": "user",
+  "createdAt": "2025-09-21T15:30:12Z",
+  "updatedAt": "2025-09-21T15:30:12Z",
+  "source": "user-service"
+}

@@ -1,0 +1,10 @@
+{
+  "applicationId": "app_54321",
+  "jobId": "job_98765",
+  "userId": "12345",
+  "status": "pending",
+  "appliedAt": "2025-09-21T17:00:00Z",
+  "updatedAt": "2025-09-21T17:10:00Z",
+  "isResumeAttached": true,
+  "score": 85
+}

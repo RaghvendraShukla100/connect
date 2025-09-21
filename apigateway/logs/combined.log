@@ -47,3 +47,7 @@
 2025-09-21 17:36:57 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
 2025-09-21 17:46:42 [[32minfo[39m] : Shutting down API Gateway...
 2025-09-21 17:46:52 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 17:56:19 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 17:56:29 [[33mwarn[39m] : Unauthorized access attempt - No token provided
+2025-09-21 17:58:31 [[33mwarn[39m] : Unauthorized access attempt - No token provided
+2025-09-21 21:13:01 [[32minfo[39m] : 🚀 API Gateway running on port 8080

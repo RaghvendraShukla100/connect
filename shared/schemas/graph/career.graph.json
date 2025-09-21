@@ -1,0 +1,11 @@
+{
+  "nodes": [
+    { "id": "1", "title": "Junior Developer" },
+    { "id": "2", "title": "Senior Developer" },
+    { "id": "3", "title": "Team Lead" }
+  ],
+  "relationships": [
+    { "from": "1", "to": "2", "type": "PROMOTED_TO" },
+    { "from": "2", "to": "3", "type": "PROMOTED_TO" }
+  ]
+}

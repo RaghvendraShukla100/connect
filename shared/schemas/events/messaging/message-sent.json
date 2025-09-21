@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "messageId": { "type": "string" },
+    "senderId": { "type": "string" },
+    "receiverId": { "type": "string" },
+    "text": { "type": "string" },
+    "sentAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["messageId", "senderId", "receiverId", "text", "sentAt"]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "userId": { "type": "string" },
+    "email": { "type": "string" },
+    "registeredAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["userId", "email", "registeredAt"]
+}

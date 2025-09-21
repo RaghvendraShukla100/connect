@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "badgeId": { "type": "string" },
+    "userId": { "type": "string" },
+    "badgeName": { "type": "string" },
+    "awardedAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["badgeId", "userId", "badgeName", "awardedAt"]
+}

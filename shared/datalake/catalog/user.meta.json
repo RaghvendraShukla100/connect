@@ -1,0 +1,42 @@
+{
+  "entity": "User",
+  "description": "Metadata for User events and schema",
+  "fields": [
+    {
+      "name": "userId",
+      "type": "string",
+      "required": true,
+      "description": "Unique identifier for the user"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "description": "Full name of the user"
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "required": true,
+      "description": "Email of the user"
+    },
+    {
+      "name": "role",
+      "type": "string",
+      "required": true,
+      "description": "Role of the user (user, employer, admin)"
+    },
+    {
+      "name": "createdAt",
+      "type": "string",
+      "required": true,
+      "description": "Timestamp when the user was created"
+    },
+    {
+      "name": "updatedAt",
+      "type": "string",
+      "required": true,
+      "description": "Timestamp when the user was last updated"
+    }
+  ]
+}

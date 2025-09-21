@@ -1,0 +1,13 @@
+{
+  "jobId": "job_98765",
+  "title": "Frontend Developer",
+  "description": "Looking for a React developer",
+  "employerId": "emp_12345",
+  "location": "Bangalore",
+  "salaryMin": "50000",
+  "salaryMax": "80000",
+  "tags": ["React", "JS"],
+  "createdAt": "2025-09-21T16:00:30Z",
+  "updatedAt": "2025-09-21T16:00:30Z",
+  "source": "job-service"
+}

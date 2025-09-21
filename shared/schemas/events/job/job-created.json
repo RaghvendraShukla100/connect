@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "jobId": { "type": "string" },
+    "title": { "type": "string" },
+    "company": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["jobId", "title", "company", "createdAt"]
+}

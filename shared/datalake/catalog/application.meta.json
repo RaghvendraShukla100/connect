@@ -1,0 +1,42 @@
+{
+  "entity": "Application",
+  "description": "Metadata for Job Application events and schema",
+  "fields": [
+    {
+      "name": "applicationId",
+      "type": "string",
+      "required": true,
+      "description": "Unique identifier for the application"
+    },
+    {
+      "name": "jobId",
+      "type": "string",
+      "required": true,
+      "description": "ID of the job applied for"
+    },
+    {
+      "name": "userId",
+      "type": "string",
+      "required": true,
+      "description": "ID of the user applying for the job"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "required": true,
+      "description": "Application status (pending, accepted, rejected)"
+    },
+    {
+      "name": "appliedAt",
+      "type": "string",
+      "required": true,
+      "description": "Timestamp when the application was submitted"
+    },
+    {
+      "name": "updatedAt",
+      "type": "string",
+      "required": true,
+      "description": "Timestamp when the application status was last updated"
+    }
+  ]
+}
