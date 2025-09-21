@@ -1,13 +1,19 @@
 import express from "express";
-import validate from "../middleware/validate-request.js";
-import { updateProfile } from "../validations/profile.schema.js";
+import { createProxyMiddleware } from "http-proxy-middleware";
+import { env } from "../../config/env.js";
+import { authMiddleware } from "../middlewares/auth-middleware.js";
 
 const router = express.Router();
 
-router.put("/:userId", validate(updateProfile), (req, res) => {
-  res
-    .status(501)
-    .json({ message: "Stub: this should be proxied to profile-service" });
-});
+// Forward profile routes → profile-service
+router.use(
+  "/profiles",
+  authMiddleware,
+  createProxyMiddleware({
+    target: env.services.profile,
+    changeOrigin: true,
+    pathRewrite: { "^/profiles": "" },
+  })
+);
 
 export default router;

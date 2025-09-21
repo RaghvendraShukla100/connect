@@ -1,10 +1,8 @@
-// cors.js
-// CORS policy config
+import { env } from "./env.js";
 
-import cors from "cors";
-
-export default cors({
-  origin: ["http://localhost:3000"], // Allowed frontends
-  methods: ["GET", "POST", "PUT", "DELETE"],
+export const corsOptions = {
+  origin: env.cors.origin,
   credentials: true,
-});
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};

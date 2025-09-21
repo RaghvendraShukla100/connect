@@ -1,15 +1,39 @@
-// auth-middleware.js
+// src/middlewares/auth.js
 import jwt from "jsonwebtoken";
+import { env } from "../../config/env.js";
+import { logger } from "../../config/logger.js";
 
-export default function authMiddleware(req, res, next) {
-  const token = req.headers["authorization"]?.split(" ")[1];
-  if (!token) return res.status(401).json({ error: "No token provided" });
+/**
+ * JWT authentication middleware
+ * Verifies token, issuer, and audience
+ * Attaches decoded payload to req.user
+ */
+export const authMiddleware = (req, res, next) => {
+  const authHeader = req.headers?.authorization;
+
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    logger.warn("Unauthorized access attempt - No token provided");
+    return res.status(401).json({
+      status: "error",
+      message: "Unauthorized. No token provided.",
+    });
+  }
+
+  const token = authHeader.split(" ")[1];
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || "secret");
-    req.user = decoded;
+    const payload = jwt.verify(token, env.jwtSecret, {
+      issuer: env.jwtIssuer,
+      audience: env.jwtAudience,
+    });
+
+    req.user = payload; // Attach user info
     next();
   } catch (err) {
-    return res.status(403).json({ error: "Invalid token" });
+    logger.error("Forbidden access - Invalid token", { stack: err.stack });
+    return res.status(403).json({
+      status: "error",
+      message: "Forbidden. Invalid token.",
+    });
   }
-}
+};

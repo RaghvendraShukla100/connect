@@ -11,3 +11,39 @@
 {"level":"info","message":"GET /api/auth/test","timestamp":"2025-09-09T18:36:03.170Z"}
 {"level":"info","message":"GET /api/auth/test","timestamp":"2025-09-09T18:39:49.472Z"}
 {"level":"info","message":"API Gateway running on port 8080","timestamp":"2025-09-13T13:12:35.767Z"}
+2025-09-21 15:47:40 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 15:47:48 [[32minfo[39m] : Shutting down API Gateway...
+2025-09-21 15:47:55 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 15:49:52 [[31merror[39m] : [GET] /health - app.use is not a function
+2025-09-21 16:01:37 [[31merror[39m] : [GET] /health - app.use is not a function
+2025-09-21 16:01:47 [[31merror[39m] : [GET] / - app.use is not a function
+2025-09-21 16:04:35 [[31merror[39m] : [GET] /api/auth - app.use is not a function
+2025-09-21 16:05:38 [[32minfo[39m] : Shutting down API Gateway...
+2025-09-21 16:05:52 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 16:06:18 [[31merror[39m] : [GET] /health%0A - app.use is not a function
+2025-09-21 16:06:22 [[31merror[39m] : [GET] /health - app.use is not a function
+2025-09-21 16:06:30 [[31merror[39m] : [POST] /health - app.use is not a function
+2025-09-21 16:06:36 [[31merror[39m] : [DELETE] /health - app.use is not a function
+2025-09-21 16:06:44 [[31merror[39m] : [GET] /health - app.use is not a function
+2025-09-21 16:10:42 [[32minfo[39m] : Shutting down API Gateway...
+2025-09-21 16:10:47 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 16:10:55 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:06:42 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:11:26 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:15:01 [[32minfo[39m] : Shutting down API Gateway...
+2025-09-21 17:15:10 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 17:15:15 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:15:17 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:15:30 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 17:15:38 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:29:18 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 17:29:54 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:32:11 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 17:32:16 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:35:24 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 17:35:30 [[31merror[39m] : [GET] /health - mongoSanitize(...).sanitize is not a function
+2025-09-21 17:36:49 [[32minfo[39m] : Shutting down API Gateway...
+2025-09-21 17:36:54 [[32minfo[39m] : 🚀 API Gateway running on port 8080
+2025-09-21 17:36:57 [[31merror[39m] : [GET] /health - Cannot set property query of #<IncomingMessage> which has only a getter
+2025-09-21 17:46:42 [[32minfo[39m] : Shutting down API Gateway...
+2025-09-21 17:46:52 [[32minfo[39m] : 🚀 API Gateway running on port 8080

@@ -1,21 +1,16 @@
+// src/middlewares/security.js
+import helmet from "helmet";
 import cors from "cors";
+import mongoSanitize from "express-mongo-sanitize";
+import { corsOptions } from "../../config/cors.js";
 
-const security = (app, corsConfig) => {
-  if (corsConfig) {
-    const corsOptions = {
-      origin: (origin, cb) => {
-        if (!origin) return cb(null, true);
-        if (corsConfig.origin.includes(origin)) return cb(null, true);
-        return cb(new Error("Not allowed by CORS"));
-      },
-      methods: corsConfig.methods,
-      allowedHeaders: corsConfig.allowedHeaders,
-      credentials: corsConfig.credentials,
-    };
-    app.use(cors(corsOptions));
-  } else {
-    app.use(cors());
-  }
-};
-
-export default security;
+export const securityMiddleware = [
+  helmet(), // Security headers
+  cors(corsOptions), // Enable CORS
+  (req, res, next) => {
+    // Only sanitize body and params; skip query to avoid Node 22+ error
+    if (req.body) mongoSanitize.sanitize(req.body, { replaceWith: "_" });
+    if (req.params) mongoSanitize.sanitize(req.params, { replaceWith: "_" });
+    next();
+  },
+];

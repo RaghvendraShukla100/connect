@@ -1,20 +1,17 @@
-// src/routes/auth-routes.js
-import { Router } from "express";
+import express from "express";
 import { createProxyMiddleware } from "http-proxy-middleware";
-import dotenv from "dotenv";
-dotenv.config();
+import { env } from "../../config/env.js";
+import { authMiddleware } from "../middlewares/auth-middleware.js";
 
-const router = Router();
+const router = express.Router();
 
-// Proxy all /api/auth/* requests to Identity service
+// Forward auth-related routes → identity-service
 router.use(
-  "/",
+  "/auth",
   createProxyMiddleware({
-    target: process.env.AUTH_SERVICE_URL, // http://localhost:4000
+    target: env.services.auth,
     changeOrigin: true,
-    pathRewrite: {
-      "^/": "/", // keep the same path
-    },
+    pathRewrite: { "^/auth": "" },
   })
 );
 
